@@ -9,47 +9,28 @@
   accent-color: "#000000",
   body,
 ) = {
-
-  // Sets document metadata
   set document(author: author, title: author)
-
-  // Document-wide formatting, including font and margins
   set text(
-    // LaTeX style font
     font: "New Computer Modern",
-    size: 10pt,
+    size: 11pt,
     lang: "en",
-    // Disable ligatures so ATS systems do not get confused when parsing fonts.
     ligatures: false
   )
-
-  // Reccomended to have 0.5in margin on all sides
   set page(
     margin: (0.5in),
     "us-letter",
   )
-
-
-  // Link styles
   show link: underline
-
-
-  // Small caps for section titles
   show heading.where(level: 2): it => [
     #pad(top: 0pt, bottom: -10pt, [#smallcaps(it.body)])
     #line(length: 100%, stroke: 1pt)
   ]
-
-  // Accent Color Styling
   show heading: set text(
     fill: rgb(accent-color),
   )
-
   show link: set text(
     fill: rgb(accent-color),
   )
-
-  // Name will be aligned left, bold and big
   show heading.where(level: 1): it => [
     #set align(left)
     #set text(
@@ -58,11 +39,7 @@
     )
     #it.body
   ]
-
-  // Level 1 Heading
-        align(horizon, [= #(author)])
-
-  // Personal Info
+  align(horizon, [= #(author), Full Stack Engineer])
   pad(
     top: 0.25em,
     align(left)[
@@ -90,14 +67,10 @@
       )
     ],
   )
-
-  // Main body.
   set par(justify: true)
-
   body
 }
 
-// Generic two by two component for resume
 #let generic-two-by-two(
   top-left: "",
   top-right: "",
@@ -110,7 +83,6 @@
   ]
 }
 
-// Generic one by two component for resume
 #let generic-one-by-two(
   left: "",
   right: "",
@@ -120,7 +92,6 @@
   ]
 }
 
-// Cannot just use normal --- ligature becuase ligatures are disabled for good reasons
 #let dates-helper(
   start-date: "",
   end-date: "",
@@ -128,19 +99,17 @@
   start-date + " " + $dash.em$ + " " + end-date
 }
 
-// Section components below
 #let edu(
   institution: "",
   dates: "",
   degree: "",
-  gpa: "",
   location: "",
 ) = {
   generic-two-by-two(
     top-left: strong(institution),
-    top-right: location,
+    top-right: dates,
     bottom-left: emph(degree),
-    bottom-right: emph(dates),
+    bottom-right: emph(location),
   )
 }
 
@@ -179,108 +148,92 @@
   )
 }
 
+// Personal Information
 #let name = "Anas Chhilif"
 #let location = "Nice, France"
 #let email = "chhilifanas@gmail.com"
 #let github = "github.com/anaschhilif"
 #let phone = "+33 7 83 39 17 91"
 #let personal-site = "chhilif.com"
+#let linkedin = "www.linkedin.com/in/anas-chhilif/"
 
 #show: resume.with(
   author: name,
-  // All the lines below are optional. 
-  // For example, if you want to to hide your phone number:
-  // feel free to comment those lines out and they will not show.
   location: location,
   email: email,
   github: github,
   phone: phone,
   personal-site: personal-site,
+  linkedin: linkedin,
   accent-color: "#26428b",
 )
-Fullstack Engineering Apprentice | 5th Year Computer Science, Polytech Nice Sophia
-Seeking Permanent Role from September 2025
 
-== Work Experience
+Computer Science Engineer, Polytech Nice Sophia
+Seeking a full-time position starting September 2025
 
+== Professional Experience
 
 #work(
-  title: "Fullstack Engineer, Apprentice",
-  location: "Nice, France",
+  title: "Full Stack Engineer",
+  dates: dates-helper(start-date: "Sept 2023", end-date: "Present"),
   company: "Stiilt, SAS",
-  dates: dates-helper(start-date: "Sep 2023", end-date: "Present"),
+  location: "Nice, France",
 )
 
-- Designed and implemented scalable backend architectures and custom frontends/backends for various clients.
-
-- Contributed to Kubernetes deployment and CI/CD pipelines, enhancing efficiency and troubleshooting complex issues.
+Development and deployment of complex web applications in a dynamic startup environment:
+- Architecture and implementation of *full stack* solutions for critical applications using *Angular* and *Nestjs*
+- Maintenance and debugging of *Kubernetes* infrastructures
+- Application performance improvement, reducing loading times by 40%
 
 #work(
-  title: "Software Engineer intern",
-  location: "Fes, Morocco",
-  company: "INFOGERANCE ET INGENIERIE INFORMATIQUE",
+  title: "Software Engineer",
   dates: dates-helper(start-date: "Jul 2023", end-date: "Aug 2023"),
+  company: "INFOGERANCE ET INGENIERIE INFORMATIQUE",
+  location: "Fez, Morocco",
 )
-- Developed and maintained an internal product using ReactJS for the frontend.
-
-- Built and maintained the backend server and its API using Python FastAPI.
+Development of an inventory management application using *ReactJS* and *FastAPI*, resulting in a 30% reduction in order processing time.
 
 == Education
 
 #edu(
   institution: "Polytech Nice Sophia",
-  location: "Sophia Antipolis, Fr",
-  dates: dates-helper(start-date: "Sep 2023", end-date: "Sep 2025"),
-  degree: "Master's of engineering, computer science",
+  dates: dates-helper(start-date: "Sept 2022", end-date: "Sept 2025"),
+  degree: "Engineering Degree, Computer Science",
+  location: "Sophia Antipolis, France",
 )
-- Relevant Coursework: Software architecture, Devops, Middleware and service oriented computing, Machine learning, Software Security, Advanced Networking, Advanced algorithmics, Computation theory.
 
 #edu(
-  institution: "IAE Nice",
-  location: "Nice, Fr",
-  dates: dates-helper(start-date: "Sep 2024", end-date: "Sep 2025"),
-  degree: "Master's of Management",
+  institution: "Preparatory Classes for Engineering Schools Settat",
+  dates: dates-helper(start-date: "Sept 2020", end-date: "Jul 2022"),
+  degree: "CCINP Competition Ranking 165/1300",
+  location: "Settat, Morocco",
 )
-- Relevant Coursework: Effective management, International Management, Sustainable business models.
-
 
 == Projects
 
 #project(
-  role: "Core maintainer",
+  role: "Lead Developer",
   name: "Budgeteer",
   dates: dates-helper(start-date: "Jul 2024", end-date: "Present"),
   url: "github.com/anaschhilif/budgeteer",
 )
-- Developed and maintained Budgeteer, a cross-platform Kotlin app with Kotlin Spring Boot backend, using Jetpack Compose and CI/CD with GitHub Actions, to help roommates manage shared expenses.
+
+Cross-platform shared expense management application developed with *Kotlin* and *Spring Boot*. Development of a robust API using *Kotlin* and *Spring Boot*, connected to a cross-platform mobile application using *Kotlin Multiplatform*. Continuous integration with *GitHub Actions*.
 
 #project(
-  role: "Core maintainer",
+  role: "Lead Developer",
   name: "MusicMan",
   dates: dates-helper(start-date: "Jun 2024", end-date: "Present"),
   url: "github.com/anaschhilif/music-man",
 )
-- Write an application to be able to play music and control it using vim-like bindings, built totally in rust.
-
+Innovative music control application developed in *Rust*.
 
 == Extracurricular Activities
+Founder of Sharkoders and organizer of programming competitions at Polytech Nice, promoting algorithmic culture and collaborative development.
 
-#extracurriculars(
-  activity: "Competitive programming",
-  dates: dates-helper(start-date: "Jan 2021", end-date: "Present"),
-)
-- Founder of Sharkoders, a competitive programming club at Polytech Marseille, where we gave students courses on algorithms and organized mock competitions to practice
-- Organized mock progamming competitions in Polytech Nice for the BDT association where students competed against each other on the online platrform Kattis
-
-// #extracurriculars(
-//   activity: "Science Olympiad Volunteering",
-//   dates: "Sep 2023 --- Present"
-// )
-// - Volunteer and write tests for tournaments, including LA Regionals and SoCal State \@ Caltech
-
-== Skills and Awards
-- *Programming Languages*: JavaScript, Python, C/C++, HTML/CSS, Java, Bash, R, Golang, Rust, Kotlin. 
-- *Technologies*: React, Svelte, Tailwind CSS, Git, UNIX, Google Cloud Platform, Angular, Spring, Nestjs.
-- *Devops*: Jenkins, Github actions, Github workers, Kubernetes, Docker, Caddy, NGINX, SonarQube, Artifactory.
-- Ranked 66/200 in the 2020 edition of MCPC
-- Ranked 90/400 in the 2024 Thales Battledev Competition
+== Skills
+- *Languages*: JavaScript, Python, C/C++, Java, Golang, Rust, Kotlin
+- *Technologies*: React, Svelte, Angular, Spring, Nestjs, Tailwind CSS
+- *DevOps*: Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube
+- *Cloud*: Google Cloud Platform, AWS
+- Top 90 out of 400 in the Thales Battledev Competition 2024

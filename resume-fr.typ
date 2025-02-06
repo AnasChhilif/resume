@@ -9,11 +9,10 @@
   accent-color: "#000000",
   body,
 ) = {
-  // [Previous layout settings remain the same]
   set document(author: author, title: author)
   set text(
     font: "New Computer Modern",
-    size: 10pt,
+    size: 11pt,
     lang: "fr",
     ligatures: false
   )
@@ -40,7 +39,7 @@
     )
     #it.body
   ]
-  align(horizon, [= #(author)])
+  align(horizon, [= #(author), Ingénieur Fullstack])
   pad(
     top: 0.25em,
     align(left)[
@@ -84,7 +83,6 @@
   ]
 }
 
-// Generic one by two component for resume
 #let generic-one-by-two(
   left: "",
   right: "",
@@ -94,7 +92,6 @@
   ]
 }
 
-// Cannot just use normal --- ligature becuase ligatures are disabled for good reasons
 #let dates-helper(
   start-date: "",
   end-date: "",
@@ -102,19 +99,17 @@
   start-date + " " + $dash.em$ + " " + end-date
 }
 
-// Section components below
 #let edu(
   institution: "",
   dates: "",
   degree: "",
-  gpa: "",
   location: "",
 ) = {
   generic-two-by-two(
     top-left: strong(institution),
-    top-right: location,
+    top-right: dates,
     bottom-left: emph(degree),
-    bottom-right: emph(dates),
+    bottom-right: emph(location),
   )
 }
 
@@ -153,13 +148,14 @@
   )
 }
 
-
+// Personal Information
 #let name = "Anas Chhilif"
 #let location = "Nice, France"
 #let email = "chhilifanas@gmail.com"
 #let github = "github.com/anaschhilif"
 #let phone = "+33 7 83 39 17 91"
 #let personal-site = "chhilif.com"
+#let linkedin = "www.linkedin.com/in/anas-chhilif/"
 
 #show: resume.with(
   author: name,
@@ -168,50 +164,51 @@
   github: github,
   phone: phone,
   personal-site: personal-site,
+  linkedin: linkedin,
   accent-color: "#26428b",
 )
-Apprenti Ingénieur Full Stack | 5ème année en Informatique, Polytech Nice Sophia
+
+Ingénieur en Informatique, Polytech Nice Sophia
 À la recherche d'un poste en CDI à partir de septembre 2025
 
 == Expérience Professionnelle
 
 #work(
-  title: "Ingénieur Full Stack, Apprenti",
-  location: "Nice, France",
-  company: "Stiilt, SAS",
+  title: "Ingénieur Full Stack",
   dates: dates-helper(start-date: "Sept 2023", end-date: "Présent"),
+  company: "Stiilt, SAS",
+  location: "Nice, France",
 )
 
-- Conception et mise en œuvre d'architectures backend et frontend pour divers clients, y compris des tableaux de bord internes et des applications client.
-
-- Contribution au déploiement Kubernetes et aux pipelines CI/CD, amélioration de l'efficacité et résolution de problèmes complexes.
+Développement et déploiement d'applications web complexes dans un environnement startup dynamique :
+- Architecture et implémentation de solutions *full stack* pour des applications critiques, utilisant *Angular* et *Nestjs*
+- Maintenance et débogage d'infrastructures *Kubernetes*
+- Amélioration des performances applicatives, réduisant les temps de chargement de 40%
 
 #work(
-  title: "Stagiaire Ingénieur Logiciel",
-  location: "Fès, Maroc",
-  company: "INFOGERANCE ET INGENIERIE INFORMATIQUE",
+  title: "Ingénieur Logiciel",
   dates: dates-helper(start-date: "Juil 2023", end-date: "Août 2023"),
+  company: "INFOGERANCE ET INGENIERIE INFORMATIQUE",
+  location: "Fès, Maroc",
 )
-- Développement d'un produit de gestion de stock interne utilisant ReactJS pour le frontend et Python FastAPI pour le backend.
-
+Développement d'une application de gestion de stock utilisant *ReactJS* et *FastAPI*, permettant une réduction de 30% du temps de traitement des commandes.
 
 == Formation
 
-#edu(
-  institution: "Polytech Nice Sophia",
-  location: "Sophia Antipolis, Fr",
-  dates: dates-helper(start-date: "Sept 2023", end-date: "Sept 2025"),
-  degree: "Diplôme d'ingénieur, informatique",
-)
-- Cours Pertinents : Architecture logicielle, DevOps, Intergiciels et informatique orientée services, Apprentissage automatique, Sécurité logicielle, Réseaux avancés, Algorithmique avancée, Théorie du calcul.
 
 #edu(
-  institution: "IAE Nice",
-  location: "Nice, Fr",
-  dates: dates-helper(start-date: "Sept 2024", end-date: "Sept 2025"),
-  degree: "Master en Management",
+  institution: "Polytech Nice Sophia",
+  dates: dates-helper(start-date: "Sept 2022", end-date: "Sept 2025"),
+  degree: "Diplôme d'ingénieur, informatique",
+  location: "Sophia Antipolis, France",
 )
-- Cours Pertinents : Transformation digitale des organistations, Management international, Modèles d'entreprise durables.
+
+#edu(
+  institution: "Classes Préparatoires aux Grandes Ecoles Settat",
+  dates: dates-helper(start-date: "Sept 2020", end-date: "Juil 2022"),
+  degree: "Concours CCINP classement 165/1300",
+  location: "Settat, Maroc",
+)
 
 == Projets
 
@@ -221,27 +218,22 @@ Apprenti Ingénieur Full Stack | 5ème année en Informatique, Polytech Nice Sop
   dates: dates-helper(start-date: "Juil 2024", end-date: "Présent"),
   url: "github.com/anaschhilif/budgeteer",
 )
-- Développement et maintenance de Budgeteer, une application multiplateforme en Kotlin avec backend Spring Boot, utilisant Jetpack Compose et CI/CD avec GitHub Actions, pour aider les colocataires à gérer leurs dépenses partagées.
 
+Application multiplateforme de gestion de dépenses partagées développée en *Kotlin* et *Spring Boot*. Développement d'une API robuste avec *Kotlin* et *Spring Boot*, connectée à une application mobile multiplateforme utilisant *Kotlin Multiplatform*. Intégration continue avec *GitHub Actions*.
 #project(
   role: "Développeur principal",
   name: "MusicMan",
   dates: dates-helper(start-date: "Juin 2024", end-date: "Présent"),
   url: "github.com/anaschhilif/music-man",
 )
-- Développement d'une application permettant de lire et contrôler la musique avec des commandes similaires à vim, construite entièrement en Rust.
+Application de contrôle musical innovante développée en *Rust*.
 
 == Activités Extrascolaires
+Fondateur de Sharkoders et organisateur de compétitions de programmation à Polytech Nice, promouvant la culture algorithmique et le développement collaboratif.
 
-#extracurriculars(
-  activity: "Programmation compétitive",
-  dates: dates-helper(start-date: "Jan 2021", end-date: "Présent"),
-)
-- Fondateur de Sharkoders, un club de programmation compétitive à Polytech Marseille, où nous avons donné des cours d'algorithmes aux étudiants et organisé des compétitions d'entraînement
-- Organisation de compétitions de programmation à Polytech Nice pour l'association BDT où les étudiants s'affrontaient sur la plateforme en ligne Kattis
-
-== Compétences et Récompenses
-- *Langages de Programmation* : JavaScript, Python, C/C++, HTML/CSS, Java, Bash, R, Golang, Rust, Kotlin.
-- *Technologies* : React, Svelte, Tailwind CSS, Git, UNIX, Google Cloud Platform, Angular, Spring, Nestjs.
-- *DevOps* : Jenkins, Github actions, Github workers, Kubernetes, Docker, Caddy, NGINX, SonarQube, Artifactory.
-- Classé 90ème sur 400 à la Compétition Thales Battledev 2024
+== Compétences
+- *Langages* : JavaScript, Python, C/C++, Java, Golang, Rust, Kotlin
+- *Technologies* : React, Svelte, Angular, Spring, Nestjs, Tailwind CSS
+- *DevOps* : Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube
+- *Cloud* : Google Cloud Platform, AWS
+- Top 90 sur 400 à la Compétition Thales Battledev 2024
