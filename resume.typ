@@ -12,18 +12,22 @@
   set document(author: author, title: author)
   set text(
     font: "New Computer Modern",
-    size: 11pt,
+    size: 10pt, // Reduced from 11pt
     lang: "en",
     ligatures: false
   )
   set page(
-    margin: (0.5in),
+    margin: (0.4in), // Reduced from 0.5in
     "us-letter",
+  )
+  set par(
+    leading: 0.4em, // Reduced line spacing
+    spacing: 0.4em  // Reduced paragraph spacing
   )
   show link: underline
   show heading.where(level: 2): it => [
-    #pad(top: 0pt, bottom: -10pt, [#smallcaps(it.body)])
-    #line(length: 100%, stroke: 1pt)
+    #pad(top: 2pt, bottom: -8pt, [#smallcaps(it.body)]) // Reduced padding
+    #line(length: 100%, stroke: 0.8pt) // Thinner line
   ]
   show heading: set text(
     fill: rgb(accent-color),
@@ -35,38 +39,68 @@
     #set align(left)
     #set text(
       weight: 700,
-      size: 20pt,
+      size: 18pt, // Reduced from 20pt
     )
     #it.body
   ]
-  align(horizon, [= #(author), Full Stack Engineer])
-  pad(
-    top: 0.25em,
-    align(left)[
-      #(
-        (
-          if phone != "" {
-            phone
-          },
-          if location != "" {
-            location
-          },
-          if email != "" {
-            link("mailto:" + email)[#email]
-          },
-          if github != "" {
-            link("https://" + github)[#github]
-          },
-          if linkedin != "" {
-            link("https://" + linkedin)[#linkedin]
-          },
-          if personal-site != "" {
-            link("https://" + personal-site)[#personal-site]
-          },
-        ).filter(x => x != none).join("  |  ")
-      )
-    ],
+  
+ box(
+  grid(
+    columns: (auto, 1fr),
+    gutter: 0.3cm, // Reduced from 0.5cm
+    align: horizon,
+    
+    // Image in the first column
+    //box[#image("photo2.png", width: 1.8cm)], // Slightly smaller image
+    
+    // Text content in the second column - everything to the right of the picture
+    box(
+      align(left)[
+        // Name and title
+        #text(
+          size: 18pt, // Reduced from 20pt
+          weight: "bold",
+          fill: rgb("#26428b"),
+          [#(author), Full Stack Engineer]
+        )
+        
+        // Contact information (moved from below to here)
+        #pad(
+          top: 2pt, // Reduced padding
+          [
+            #(
+              (
+                if phone != "" {
+                  phone
+                },
+                if location != "" {
+                  location
+                },
+                if email != "" {
+                  link("mailto:" + email)[#email]
+                },
+                if github != "" {
+                  link("https://" + github)[#github]
+                },
+                if linkedin != "" {
+                  link("https://" + linkedin)[#linkedin]
+                },
+                if personal-site != "" {
+                  link("https://" + personal-site)[#personal-site]
+                },
+              ).filter(x => x != none).join("  |  ")
+            )
+          ]
+        )
+        
+        #pad(top: 2pt, // Reduced padding
+          [3+ Years of Experience in Full Stack Development and Modern Web Technologies. Looking for a permanent position starting September 2025]
+        )
+      ]
+    )
   )
+) 
+  
   set par(justify: true)
   body
 }
@@ -77,7 +111,7 @@
   bottom-left: "",
   bottom-right: "",
 ) = {
-  pad[
+  pad(top: 2pt, bottom: 2pt)[ // Reduced padding
     #top-left #h(1fr) #top-right \
     #bottom-left #h(1fr) #bottom-right
   ]
@@ -87,7 +121,7 @@
   left: "",
   right: "",
 ) = {
-  pad[
+  pad(top: 2pt, bottom: 2pt)[ // Reduced padding
     #left #h(1fr) #right
   ]
 }
@@ -133,7 +167,7 @@
   url: "",
   dates: "",
 ) = {
-  pad[
+  pad(top: 2pt, bottom: 2pt)[ // Reduced padding
     *#role*, #name (#link("https://" + url)[#url]) #h(1fr) #dates
   ]
 }
@@ -155,6 +189,7 @@
 #let github = "github.com/anaschhilif"
 #let phone = "+33 7 83 39 17 91"
 #let personal-site = "chhilif.com"
+#let linkedin = "www.linkedin.com/in/anas-chhilif/"
 
 #show: resume.with(
   author: name,
@@ -163,11 +198,9 @@
   github: github,
   phone: phone,
   personal-site: personal-site,
+  linkedin: linkedin,
   accent-color: "#26428b",
 )
-
-Full Stack Engineer, Polytech Nice Sophia
-Seeking a permanent position starting September 2025
 
 == Professional Experience
 
@@ -178,10 +211,12 @@ Seeking a permanent position starting September 2025
   location: "Nice, France",
 )
 
-Development and deployment of complex web applications in a dynamic startup environment:
-- Architecture and implementation of *full stack* solutions for critical applications using *Angular* and *Nestjs*
-- Maintenance and debugging of *Kubernetes* infrastructures
-- Improvement of application performance, reducing loading times by 40%
+Design, development, and operation of complex web and mobile applications in a dynamic startup environment:
+- Architecture and implementation of *full stack* solutions using *Angular* and *NestJS*, handling both frontend user interfaces and backend API development
+- Maintenance and optimization of *iOS* and *Android* mobile applications, ensuring cross-platform compatibility and performance
+- Management and debugging of *Kubernetes* infrastructures, including container orchestration and deployment pipelines
+- Performance optimization across web and mobile platforms, achieving a 40% reduction in loading times through code refactoring and caching strategies
+- Collaboration with product teams to deliver scalable solutions meeting business requirements and user needs
 
 #work(
   title: "Software Engineer",
@@ -199,9 +234,10 @@ Development of an inventory management application using *ReactJS* and *FastAPI*
   degree: "Engineering Degree, Computer Science",
   location: "Sophia Antipolis, France",
 )
+Headed multiple group projects and managed cross-functional teams throughout the program.
 
 #edu(
-  institution: "Preparatory Classes for Engineering Schools Settat",
+  institution: "Classes Préparatoires aux Grandes Ecoles Settat",
   dates: dates-helper(start-date: "Sept 2020", end-date: "Jul 2022"),
   degree: "CCINP Competition ranking 165/1300",
   location: "Settat, Morocco",
@@ -213,10 +249,10 @@ Development of an inventory management application using *ReactJS* and *FastAPI*
   role: "Lead Developer",
   name: "Budgeteer",
   dates: dates-helper(start-date: "Jul 2024", end-date: "Present"),
-  url: "github.com/anaschhilif/budgeteer",
+  url: "https://github.com/budgeteer-app",
 )
 
-Cross-platform shared expense management application developed with *Kotlin* and *Spring Boot*. Development of a robust API using *Kotlin* and *Spring Boot*, connected to a cross-platform mobile application using *Kotlin Multiplatform*. Continuous integration with *GitHub Actions*.
+Cross-platform shared expense management application developed in *Kotlin* and *Spring Boot*. Development of a robust API with *Kotlin* and *Spring Boot*, connected to a cross-platform mobile application using *Kotlin Multiplatform*. Continuous integration with *GitHub Actions*.
 
 #project(
   role: "Lead Developer",
@@ -226,12 +262,19 @@ Cross-platform shared expense management application developed with *Kotlin* and
 )
 Innovative music control application developed in *Rust*.
 
+== Technical Skills
+- *Programming Languages*: JavaScript, Python, C/C++, Java, Go, Rust, Kotlin
+- *Technologies*: React, Svelte, Angular, Spring, NestJS, Tailwind CSS
+- *DevOps*: Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube, GitLab, GitLab CI
+- *Cloud*: Google Cloud Platform, AWS
+- Top 90 out of 400 in the Thales Battledev 2024 Competition
+
+== Soft Skills
+- *Leadership*: Led development teams in multiple group projects, coordinating efforts across different technical domains
+- *Team Building*: Fostered collaborative environments and facilitated knowledge sharing among team members
+- *Task Management*: Effectively managed project timelines and deliverables across multidisciplinary teams
+- *Communication*: Strong ability to translate technical concepts to stakeholders and coordinate between teams
+- *Languages*: Arabic, French, English (fluent)
+
 == Extracurricular Activities
 Founder of Sharkoders and organizer of programming competitions at Polytech Nice, promoting algorithmic culture and collaborative development.
-
-== Skills
-- *Languages*: JavaScript, Python, C/C++, Java, Golang, Rust, Kotlin
-- *Technologies*: React, Svelte, Angular, Spring, Nestjs, Tailwind CSS
-- *DevOps*: Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube
-- *Cloud*: Google Cloud Platform, AWS
-- Top 90 out of 400 in the Thales Battledev Competition 2024
