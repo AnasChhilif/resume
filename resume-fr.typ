@@ -190,6 +190,7 @@
 #let phone = "+33 7 83 39 17 91"
 #let personal-site = "chhilif.com"
 #let linkedin = "www.linkedin.com/in/anas-chhilif/"
+#let linkedin = "www.linkedin.com/in/anas-chhilif/"
 
 #show: resume.with(
   author: name,
@@ -228,6 +229,7 @@ Développement d'une application de gestion d'inventaire utilisant *ReactJS* et 
 
 == Formation
 
+
 #edu(
   institution: "Polytech Nice Sophia",
   dates: dates-helper(start-date: "Sept 2022", end-date: "Sept 2025"),
@@ -254,6 +256,7 @@ Direction de plusieurs projets de groupe et gestion d'équipes transversales tou
 
 Application cross-platform de gestion de dépenses partagées développée en *Kotlin* et *Spring Boot*. Développement d'une API robuste avec *Kotlin* et *Spring Boot*, connectée à une application mobile cross-platform utilisant *Kotlin Multiplatform*. Intégration continue avec *GitHub Actions*.
 
+Application multiplateforme de gestion de dépenses partagées développée en *Kotlin* et *Spring Boot*. Développement d'une API robuste avec *Kotlin* et *Spring Boot*, connectée à une application mobile multiplateforme utilisant *Kotlin Multiplatform*. Intégration continue avec *GitHub Actions*.
 #project(
   role: "Développeur Principal",
   name: "MusicMan",

@@ -183,12 +183,14 @@
 }
 
 // Personal Information
+// Personal Information
 #let name = "Anas Chhilif"
 #let location = "Nice, France"
 #let email = "chhilifanas@gmail.com"
 #let github = "github.com/anaschhilif"
 #let phone = "+33 7 83 39 17 91"
 #let personal-site = "chhilif.com"
+#let linkedin = "www.linkedin.com/in/anas-chhilif/"
 #let linkedin = "www.linkedin.com/in/anas-chhilif/"
 
 #show: resume.with(
@@ -224,6 +226,7 @@ Design, development, and operation of complex web and mobile applications in a d
   company: "INFOGERANCE ET INGENIERIE INFORMATIQUE",
   location: "Fez, Morocco",
 )
+Development of an inventory management application using *ReactJS* and *FastAPI*, resulting in a 30% reduction in order processing time.
 Development of an inventory management application using *ReactJS* and *FastAPI*, resulting in a 30% reduction in order processing time.
 
 == Education
