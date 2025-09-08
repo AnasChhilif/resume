@@ -14,27 +14,23 @@
     font: "New Computer Modern",
     size: 10pt, // Reduced from 11pt
     lang: "en",
-    ligatures: false
+    ligatures: false,
   )
   set page(
-    margin: (0.4in), // Reduced from 0.5in
+    margin: 0.4in, // Reduced from 0.5in
     "us-letter",
   )
   set par(
     leading: 0.4em, // Reduced line spacing
-    spacing: 0.4em  // Reduced paragraph spacing
+    spacing: 0.4em, // Reduced paragraph spacing
   )
   show link: underline
   show heading.where(level: 2): it => [
     #pad(top: 2pt, bottom: -8pt, [#smallcaps(it.body)]) // Reduced padding
     #line(length: 100%, stroke: 0.8pt) // Thinner line
   ]
-  show heading: set text(
-    fill: rgb(accent-color),
-  )
-  show link: set text(
-    fill: rgb(accent-color),
-  )
+  show heading: set text(fill: rgb(accent-color))
+  show link: set text(fill: rgb(accent-color))
   show heading.where(level: 1): it => [
     #set align(left)
     #set text(
@@ -43,64 +39,68 @@
     )
     #it.body
   ]
-  
- box(
-  grid(
-    columns: (auto, 1fr),
-    gutter: 0.3cm, // Reduced from 0.5cm
-    align: horizon,
-    
-    // Image in the first column
-    //box[#image("photo2.png", width: 1.8cm)], // Slightly smaller image
-    
-    // Text content in the second column - everything to the right of the picture
-    box(
-      align(left)[
-        // Name and title
-        #text(
-          size: 18pt, // Reduced from 20pt
-          weight: "bold",
-          fill: rgb("#26428b"),
-          [#(author), Full Stack Engineer]
-        )
-        
-        // Contact information (moved from below to here)
-        #pad(
-          top: 2pt, // Reduced padding
-          [
-            #(
-              (
-                if phone != "" {
-                  phone
-                },
-                if location != "" {
-                  location
-                },
-                if email != "" {
-                  link("mailto:" + email)[#email]
-                },
-                if github != "" {
-                  link("https://" + github)[#github]
-                },
-                if linkedin != "" {
-                  link("https://" + linkedin)[#linkedin]
-                },
-                if personal-site != "" {
-                  link("https://" + personal-site)[#personal-site]
-                },
-              ).filter(x => x != none).join("  |  ")
-            )
-          ]
-        )
-        
-        #pad(top: 2pt, // Reduced padding
-          [3+ Years of Experience in Full Stack Development and Modern Web Technologies. Looking for a permanent position starting September 2025]
-        )
-      ]
-    )
+
+  box(
+    grid(
+      columns: (auto, 1fr),
+      gutter: 0.3cm,
+      // Reduced from 0.5cm
+      align: horizon,
+
+      // Image in the first column
+      //box[#image("photo2.png", width: 1.8cm)], // Slightly smaller image
+
+      // Text content in the second column - everything to the right of the picture
+      box(
+        align(left)[
+          // Name and title
+          #text(
+            size: 18pt, // Reduced from 20pt
+            weight: "bold",
+            fill: rgb("#26428b"),
+            [#(author), Full Stack Engineer],
+          )
+
+          // Contact information (moved from below to here)
+          #pad(
+            top: 2pt, // Reduced padding
+            [
+              #(
+                (
+                  if phone != "" {
+                    phone
+                  },
+                  if location != "" {
+                    location
+                  },
+                  if email != "" {
+                    link("mailto:" + email)[#email]
+                  },
+                  if github != "" {
+                    link("https://" + github)[#github]
+                  },
+                  if linkedin != "" {
+                    link("https://" + linkedin)[#linkedin]
+                  },
+                  if personal-site != "" {
+                    link("https://" + personal-site)[#personal-site]
+                  },
+                )
+                  .filter(x => x != none)
+                  .join("  |  ")
+              )
+            ],
+          )
+
+          #pad(
+            top: 2pt,
+            [Full Stack Engineer with 2 years of experience in web and mobile development (Angular, React, NestJS, Spring Boot, Kotlin). Expertise in software architecture, performance optimization, and Kubernetes infrastructure management.],
+          )
+        ],
+      ),
+    ),
   )
-) 
-  
+
   set par(justify: true)
   body
 }
@@ -111,7 +111,8 @@
   bottom-left: "",
   bottom-right: "",
 ) = {
-  pad(top: 2pt, bottom: 2pt)[ // Reduced padding
+  pad(top: 2pt, bottom: 2pt)[
+    // Reduced padding
     #top-left #h(1fr) #top-right \
     #bottom-left #h(1fr) #bottom-right
   ]
@@ -121,7 +122,8 @@
   left: "",
   right: "",
 ) = {
-  pad(top: 2pt, bottom: 2pt)[ // Reduced padding
+  pad(top: 2pt, bottom: 2pt)[
+    // Reduced padding
     #left #h(1fr) #right
   ]
 }
@@ -139,12 +141,9 @@
   degree: "",
   location: "",
 ) = {
-  generic-two-by-two(
-    top-left: strong(institution),
-    top-right: dates,
-    bottom-left: emph(degree),
-    bottom-right: emph(location),
-  )
+  generic-two-by-two(top-left: strong(institution), top-right: dates, bottom-left: emph(degree), bottom-right: emph(
+    location,
+  ))
 }
 
 #let work(
@@ -153,12 +152,7 @@
   company: "",
   location: "",
 ) = {
-  generic-two-by-two(
-    top-left: strong(title),
-    top-right: dates,
-    bottom-left: company,
-    bottom-right: emph(location),
-  )
+  generic-two-by-two(top-left: strong(title), top-right: dates, bottom-left: company, bottom-right: emph(location))
 }
 
 #let project(
@@ -167,8 +161,9 @@
   url: "",
   dates: "",
 ) = {
-  pad(top: 2pt, bottom: 2pt)[ // Reduced padding
-    *#role*, #name (#link("https://" + url)[#url]) #h(1fr) #dates
+  pad(top: 2pt, bottom: 2pt)[
+    // Reduced padding
+    *#role*, #name #if (url != "") { (link("https://" + url)[#url]) } #h(1fr) #dates
   ]
 }
 
@@ -259,11 +254,11 @@ Cross-platform shared expense management application developed in *Kotlin* and *
 
 #project(
   role: "Lead Developer",
-  name: "MusicMan",
-  dates: dates-helper(start-date: "Jun 2024", end-date: "Present"),
-  url: "github.com/anaschhilif/music-man",
+  name: "DsEasy",
+  dates: dates-helper(start-date: "Sep 2023", end-date: "Present"),
+  url: "",
 )
-Innovative music control application developed in *Rust*.
+Exam generation service developed in Go and SQLite, utilizing gomigrate, SQLc, and gorilla/mux. Development of a robust API with Go, connected to a responsive frontend using React and Tailwind CSS. Continuous integration for seamless updates and management.
 
 == Technical Skills
 - *Programming Languages*: JavaScript, Python, C/C++, Java, Go, Rust, Kotlin
@@ -276,7 +271,6 @@ Innovative music control application developed in *Rust*.
 - *Leadership*: Led development teams in multiple group projects, coordinating efforts across different technical domains
 - *Team Building*: Fostered collaborative environments and facilitated knowledge sharing among team members
 - *Task Management*: Effectively managed project timelines and deliverables across multidisciplinary teams
-- *Communication*: Strong ability to translate technical concepts to stakeholders and coordinate between teams
 - *Languages*: Arabic, French, English (fluent)
 
 == Extracurricular Activities
