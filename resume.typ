@@ -163,7 +163,7 @@
 ) = {
   pad(top: 2pt, bottom: 2pt)[
     // Reduced padding
-    *#role*, #name #if (url != "") { (link("https://" + url)[#url]) } #h(1fr) #dates
+    *#role*, #name #if (url != "") {"(" + (link(url)[#url]) + ")"} #h(1fr) #dates
   ]
 }
 
@@ -256,7 +256,7 @@ Cross-platform shared expense management application developed in *Kotlin* and *
   role: "Lead Developer",
   name: "DsEasy",
   dates: dates-helper(start-date: "Sep 2023", end-date: "Present"),
-  url: "",
+  url: "https://github.com/ds-easy",
 )
 Exam generation service developed in Go and SQLite, utilizing gomigrate, SQLc, and gorilla/mux. Development of a robust API with Go, connected to a responsive frontend using React and Tailwind CSS. Continuous integration for seamless updates and management.
 
