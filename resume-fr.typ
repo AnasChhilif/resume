@@ -163,7 +163,7 @@
 ) = {
   pad(top: 2pt, bottom: 2pt)[
     // Reduced padding
-    *#role*, #name #if (url != "") { (link("https://" + url)[#url]) } #h(1fr) #dates
+    *#role*, #name #if (url != "") {"(" + (link(url)[#url]) + ")"} #h(1fr) #dates
   ]
 }
 
@@ -252,7 +252,7 @@ Application cross-platform de gestion des dépenses partagées développée en *
   role: "Développeur Principal",
   name: "DsEasy",
   dates: dates-helper(start-date: "Sep 2023", end-date: "Présent"),
-  url: "",
+  url: "https://github.com/ds-easy",
 )
 Service de génération d'examens développé en Go et SQLite, utilisant gomigrate, SQLc, et gorilla/mux. Développement d'une API robuste avec Go, connectée à un frontend responsive utilisant React et Tailwind CSS. Intégration continue pour des mises à jour et une gestion transparentes.
 
