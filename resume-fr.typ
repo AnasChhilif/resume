@@ -94,7 +94,7 @@
 
           #pad(
             top: 2pt,
-            [Ingénieur Full Stack avec 2 ans d'expérience en développement web et mobile (Angular, React, NestJS, Spring Boot, Kotlin). Expertise en architecture logicielle, optimisation des performances et gestion d'infrastructures Kubernetes.],
+            [Ingénieur Full Stack avec 2 ans d'expérience en développement web et mobile (Spring Boot, Kotlin, NestJS, Angular, React). ],
           )
         ],
       ),
@@ -201,7 +201,7 @@
 
 #work(
   title: "Ingénieur Full Stack",
-  dates: dates-helper(start-date: "Sept 2023", end-date: "Présent"),
+  dates: dates-helper(start-date: "Sept 2023", end-date: "Sept 2025"),
   company: "Stiilt, SAS",
   location: "Nice, France",
 )
@@ -268,7 +268,6 @@ Service de génération d'examens développé en Go et SQLite, utilisant gomigra
 - *Constitution d'Équipe* : Favorisé des environnements collaboratifs et facilité le partage de connaissances entre les membres de l'équipe
 - *Gestion des Tâches* : Géré efficacement les délais de projet et les livrables à travers des équipes multidisciplinaires
 - *Langues* : Arabe, Français, Anglais (courant)
-/*
+
 == Activités Extrascolaires
 Fondateur de Sharkoders et organisateur de compétitions de programmation à Polytech Nice, promouvant la culture algorithmique et le développement collaboratif.
-*/

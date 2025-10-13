@@ -203,7 +203,7 @@
 
 #work(
   title: "Full Stack Engineer",
-  dates: dates-helper(start-date: "Sept 2023", end-date: "Present"),
+  dates: dates-helper(start-date: "Sept 2023", end-date: "Sept 2025"),
   company: "Stiilt, SAS",
   location: "Nice, France",
 )
