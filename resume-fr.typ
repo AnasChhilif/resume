@@ -12,22 +12,22 @@
   set document(author: author, title: author)
   set text(
     font: "New Computer Modern",
-    size: 10pt, // Reduced from 11pt
-    lang: "en",
+    size: 10pt,
+    lang: "fr",
     ligatures: false,
   )
   set page(
-    margin: 0.4in, // Reduced from 0.5in
+    margin: 0.4in,
     "us-letter",
   )
   set par(
-    leading: 0.4em, // Reduced line spacing
-    spacing: 0.4em, // Reduced paragraph spacing
+    leading: 0.4em,
+    spacing: 0.4em,
   )
   show link: underline
   show heading.where(level: 2): it => [
-    #pad(top: 2pt, bottom: -8pt, [#smallcaps(it.body)]) // Reduced padding
-    #line(length: 100%, stroke: 0.8pt) // Thinner line
+    #pad(top: 2pt, bottom: -8pt, [#smallcaps(it.body)])
+    #line(length: 100%, stroke: 0.8pt)
   ]
   show heading: set text(fill: rgb(accent-color))
   show link: set text(fill: rgb(accent-color))
@@ -35,7 +35,7 @@
     #set align(left)
     #set text(
       weight: 700,
-      size: 18pt, // Reduced from 20pt
+      size: 18pt,
     )
     #it.body
   ]
@@ -44,7 +44,6 @@
     grid(
       columns: (auto, 1fr),
       gutter: 0.3cm,
-      // Reduced from 0.5cm
       align: horizon,
 
       // Image in the first column
@@ -53,17 +52,15 @@
       // Text content in the second column - everything to the right of the picture
       box(
         align(left)[
-          // Name and title
           #text(
-            size: 18pt, // Reduced from 20pt
+            size: 18pt,
             weight: "bold",
             fill: rgb("#26428b"),
             [#(author), Ingénieur Full Stack],
           )
 
-          // Contact information (moved from below to here)
           #pad(
-            top: 2pt, // Reduced padding
+            top: 2pt,
             [
               #(
                 (
@@ -94,7 +91,7 @@
 
           #pad(
             top: 2pt,
-            [Ingénieur Full Stack avec 2 ans d'expérience en développement web et mobile (Spring Boot, Kotlin, NestJS, Angular, React). ],
+            [Ingénieur Full Stack avec 2 ans d’expérience en développement web et mobile (Angular, React, NestJS, Spring Boot, Kotlin). Expertise en architecture logicielle et optimisation des performances.],
           )
         ],
       ),
@@ -112,7 +109,6 @@
   bottom-right: "",
 ) = {
   pad(top: 2pt, bottom: 2pt)[
-    // Reduced padding
     #top-left #h(1fr) #top-right \
     #bottom-left #h(1fr) #bottom-right
   ]
@@ -123,7 +119,6 @@
   right: "",
 ) = {
   pad(top: 2pt, bottom: 2pt)[
-    // Reduced padding
     #left #h(1fr) #right
   ]
 }
@@ -141,9 +136,7 @@
   degree: "",
   location: "",
 ) = {
-  generic-two-by-two(top-left: strong(institution), top-right: dates, bottom-left: emph(degree), bottom-right: emph(
-    location,
-  ))
+  generic-two-by-two(top-left: strong(institution), top-right: dates, bottom-left: emph(degree), bottom-right: emph(location))
 }
 
 #let work(
@@ -162,7 +155,6 @@
   dates: "",
 ) = {
   pad(top: 2pt, bottom: 2pt)[
-    // Reduced padding
     *#role*, #name #if (url != "") {"(" + (link(url)[#url]) + ")"} #h(1fr) #dates
   ]
 }
@@ -177,7 +169,7 @@
   )
 }
 
-// Informations Personnelles
+// Informations personnelles
 #let name = "Anas Chhilif"
 #let location = "Nice, France"
 #let email = "chhilifanas@gmail.com"
@@ -206,11 +198,12 @@
   location: "Nice, France",
 )
 
-Conception, développement et exploitation d'applications web et mobiles complexes dans un environnement startup dynamique :
-- Architecture et implémentation de solutions *full stack* utilisant *Angular* et *NestJS*, gérant à la fois les interfaces utilisateur frontend et le développement d'API backend
-- Maintenance et optimisation d'applications mobiles *iOS* et *Android*, assurant la compatibilité cross-platform et les performances
-- Gestion et débogage d'infrastructures *Kubernetes*, incluant l'orchestration de conteneurs et les pipelines de déploiement
-- Optimisation des performances sur les plateformes web et mobiles, atteignant une réduction de 40% des temps de chargement grâce à la refactorisation du code et aux stratégies de mise en cache
+Conception, développement et exploitation d’applications web et mobiles complexes dans un environnement startup dynamique :
+- Architecture et implémentation de solutions *full stack* avec *Angular* et *NestJS*, couvrant à la fois le développement d’interfaces utilisateur et d’API backend
+- Maintenance et optimisation des applications mobiles *iOS* et *Android*, garantissant compatibilité et performance multiplateforme
+- Gestion et débogage d’infrastructures *Kubernetes*, incluant l’orchestration de conteneurs et les pipelines de déploiement
+- Optimisation des performances sur les plateformes web et mobiles, avec une réduction de 40 % des temps de chargement grâce au refactoring et à la mise en cache
+- Collaboration avec les équipes produit pour concevoir des solutions évolutives répondant aux besoins métiers et utilisateurs
 
 #work(
   title: "Ingénieur Logiciel",
@@ -218,22 +211,30 @@ Conception, développement et exploitation d'applications web et mobiles complex
   company: "INFOGERANCE ET INGENIERIE INFORMATIQUE",
   location: "Fès, Maroc",
 )
-Développement d'une application de gestion d'inventaire utilisant *ReactJS* et *FastAPI*, résultant en une réduction de 30% du temps de traitement des commandes.
+Développement d’une application de gestion d’inventaire avec *ReactJS* et *FastAPI*, entraînant une réduction de 30 % du temps de traitement des commandes.
 
 == Formation
 
 #edu(
   institution: "Polytech Nice Sophia",
   dates: dates-helper(start-date: "Sept 2022", end-date: "Sept 2025"),
-  degree: "Diplôme d'Ingénieur, Informatique",
+  degree: "Diplôme d’ingénieur en informatique",
   location: "Sophia Antipolis, France",
 )
-Dirigé plusieurs projets de groupe et managé des équipes transfonctionnelles tout au long du programme.
+Direction de plusieurs projets de groupe et gestion d’équipes pluridisciplinaires tout au long du cursus.
 
 #edu(
-  institution: "Classes Préparatoires aux Grandes Ecoles Settat",
+  institution: "IAE Nice",
+  dates: dates-helper(start-date: "Sept 2024", end-date: "Sept 2025"),
+  degree: "Master en Management et Administration des Entreprises",
+  location: "Nice, France",
+)
+Spécialisation en contrôle de gestion et analyse financière, avec un accent sur la transformation numérique.
+
+#edu(
+  institution: "Classes Préparatoires aux Grandes Écoles Settat",
   dates: dates-helper(start-date: "Sept 2020", end-date: "Juil 2022"),
-  degree: "Concours CCINP classement 165/1300",
+  degree: "Concours CCINP — Classement 165/1300",
   location: "Settat, Maroc",
 )
 
@@ -246,28 +247,25 @@ Dirigé plusieurs projets de groupe et managé des équipes transfonctionnelles 
   url: "https://github.com/budgeteer-app",
 )
 
-Application cross-platform de gestion des dépenses partagées développée en *Kotlin* et *Spring Boot*. Développement d'une API robuste avec *Kotlin* et *Spring Boot*, connectée à une application mobile cross-platform utilisant *Kotlin Multiplatform*. Intégration continue avec *GitHub Actions*.
+Application multiplateforme de gestion de dépenses partagées développée en *Kotlin* et *Spring Boot*. Développement d’une API robuste connectée à une application mobile multiplateforme utilisant *Kotlin Multiplatform*. Intégration continue via *GitHub Actions*.
 
 #project(
   role: "Développeur Principal",
   name: "DsEasy",
-  dates: dates-helper(start-date: "Sep 2023", end-date: "Présent"),
+  dates: dates-helper(start-date: "Sept 2023", end-date: "Présent"),
   url: "https://github.com/ds-easy",
 )
-Service de génération d'examens développé en Go et SQLite, utilisant gomigrate, SQLc, et gorilla/mux. Développement d'une API robuste avec Go, connectée à un frontend responsive utilisant React et Tailwind CSS. Intégration continue pour des mises à jour et une gestion transparentes.
+Service de génération d’examens développé en *Go* et *SQLite*, utilisant *gomigrate*, *SQLc* et *gorilla/mux*. Développement d’une API robuste en *Go*, connectée à un frontend réactif avec *React* et *Tailwind CSS*. Intégration continue pour des mises à jour fluides et une maintenance simplifiée.
 
 == Compétences Techniques
-- *Langages de Programmation* : JavaScript, Python, C/C++, Java, Go, Rust, Kotlin
-- *Technologies* : React, Svelte, Angular, Spring, NestJS, Tailwind CSS
-- *DevOps* : Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube, GitLab, GitLab CI
-- *Cloud* : Google Cloud Platform, AWS
-- Top 90 sur 400 à la Compétition Thales Battledev 2024
+- *Langages de Programmation* : JavaScript, Python, C/C++, Java, Go, Rust, Kotlin  
+- *Technologies* : React, Svelte, Angular, Spring, NestJS, Tailwind CSS  
+- *DevOps* : Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube, GitLab, GitLab CI  
+- *Cloud* : Google Cloud Platform, AWS  
+- *Programmation Compétitive* : Top 90 sur 400 à la BattleDev Thales 2024 ; Fondateur du club Sharkoders à Polytech Marseille et organisateur de compétitions d’algorithmique à Polytech Nice au sein du BDT Club, promouvant la culture algorithmique et le développement collaboratif.
 
-== Compétences Transversales
-- *Leadership* : Dirigé des équipes de développement dans plusieurs projets de groupe, coordonnant les efforts à travers différents domaines techniques
-- *Constitution d'Équipe* : Favorisé des environnements collaboratifs et facilité le partage de connaissances entre les membres de l'équipe
-- *Gestion des Tâches* : Géré efficacement les délais de projet et les livrables à travers des équipes multidisciplinaires
+== Compétences Transversalles
+- *Leadership* : Encadrement d’équipes de développement sur plusieurs projets, coordination entre différents domaines techniques  
+- *Esprit d’équipe* : Promotion d’un environnement collaboratif et partage des connaissances au sein des équipes  
+- *Gestion des tâches* : Planification et suivi des livrables dans des contextes multidisciplinaires  
 - *Langues* : Arabe, Français, Anglais (courant)
-
-== Activités Extrascolaires
-Fondateur de Sharkoders et organisateur de compétitions de programmation à Polytech Nice, promouvant la culture algorithmique et le développement collaboratif.

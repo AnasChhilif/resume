@@ -178,14 +178,12 @@
 }
 
 // Personal Information
-// Personal Information
 #let name = "Anas Chhilif"
 #let location = "Nice, France"
 #let email = "chhilifanas@gmail.com"
 #let github = "github.com/anaschhilif"
 #let phone = "+33 7 83 39 17 91"
 #let personal-site = "chhilif.com"
-#let linkedin = "www.linkedin.com/in/anas-chhilif/"
 #let linkedin = "www.linkedin.com/in/anas-chhilif/"
 
 #show: resume.with(
@@ -235,6 +233,14 @@ Development of an inventory management application using *ReactJS* and *FastAPI*
 Headed multiple group projects and managed cross-functional teams throughout the program.
 
 #edu(
+  institution: "IAE Nice",
+  dates: dates-helper(start-date: "Sept 2024", end-date: "Sept 2025"),
+  degree: "Master's Degree, Management and Business Administration",
+  location: "Nice, France",
+)
+
+Specialized in management control and financial analysis, with focus on strategic decision-making, and digital transformation.
+#edu(
   institution: "Classes Préparatoires aux Grandes Ecoles Settat",
   dates: dates-helper(start-date: "Sept 2020", end-date: "Jul 2022"),
   degree: "CCINP Competition ranking 165/1300",
@@ -265,13 +271,10 @@ Exam generation service developed in Go and SQLite, utilizing gomigrate, SQLc, a
 - *Technologies*: React, Svelte, Angular, Spring, NestJS, Tailwind CSS
 - *DevOps*: Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube, GitLab, GitLab CI
 - *Cloud*: Google Cloud Platform, AWS
-- Top 90 out of 400 in the Thales Battledev 2024 Competition
+- *Competitive Programming*: Top 90 out of 400 in Thales Battledev 2024; Founder of Sharkoders club at Polytech Marseille and organizer of programming competitions at Polytech Nice in the BDT Club, promoting algorithmic culture and collaborative development.
 
 == Soft Skills
 - *Leadership*: Led development teams in multiple group projects, coordinating efforts across different technical domains
 - *Team Building*: Fostered collaborative environments and facilitated knowledge sharing among team members
 - *Task Management*: Effectively managed project timelines and deliverables across multidisciplinary teams
 - *Languages*: Arabic, French, English (fluent)
-
-== Extracurricular Activities
-Founder of Sharkoders and organizer of programming competitions at Polytech Nice, promoting algorithmic culture and collaborative development.
