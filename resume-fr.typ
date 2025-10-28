@@ -12,7 +12,7 @@
   set document(author: author, title: author)
   set text(
     font: "New Computer Modern",
-    size: 10pt,
+    size: 9.5pt,
     lang: "fr",
     ligatures: false,
   )
@@ -56,7 +56,7 @@
             size: 18pt,
             weight: "bold",
             fill: rgb("#26428b"),
-            [#(author), Ingénieur Full Stack],
+            [#(author)],
           )
 
           #pad(
@@ -91,7 +91,9 @@
 
           #pad(
             top: 2pt,
-            [Ingénieur Full Stack avec 2 ans d’expérience en développement web et mobile (Angular, React, NestJS, Spring Boot, Kotlin). Expertise en architecture logicielle et optimisation des performances.],
+            [
+Ingénieur en informatique diplômé du Master Management et Administration des Entreprises (IAE Nice), alliant expertise technique et vision stratégique des systèmes d’information, avec un fort intérêt pour les enjeux technologiques des fusions-acquisitions et de la transformation digitale.
+            ],
           )
         ],
       ),
@@ -179,93 +181,106 @@
 #let linkedin = "www.linkedin.com/in/anas-chhilif/"
 
 #show: resume.with(
-  author: name,
-  location: location,
-  email: email,
-  github: github,
-  phone: phone,
-  personal-site: personal-site,
-  linkedin: linkedin,
+  author: "Anas Chhilif",
+  location: "Nice, France",
+  email: "chhilifanas@gmail.com",
+  github: "github.com/anaschhilif",
+  phone: "+33 7 83 39 17 91",
+  personal-site: "chhilif.com",
+  linkedin: "www.linkedin.com/in/anas-chhilif/",
   accent-color: "#26428b",
 )
 
 == Expérience Professionnelle
 
 #work(
-  title: "Ingénieur Full Stack",
+  title: "Ingénieur Full Stack – Analyse et Optimisation SI",
   dates: dates-helper(start-date: "Sept 2023", end-date: "Sept 2025"),
   company: "Stiilt, SAS",
   location: "Nice, France",
 )
 
-Conception, développement et exploitation d’applications web et mobiles complexes dans un environnement startup dynamique :
-- Architecture et implémentation de solutions *full stack* avec *Angular* et *NestJS*, couvrant à la fois le développement d’interfaces utilisateur et d’API backend
-- Maintenance et optimisation des applications mobiles *iOS* et *Android*, garantissant compatibilité et performance multiplateforme
-- Gestion et débogage d’infrastructures *Kubernetes*, incluant l’orchestration de conteneurs et les pipelines de déploiement
-- Optimisation des performances sur les plateformes web et mobiles, avec une réduction de 40 % des temps de chargement grâce au refactoring et à la mise en cache
-- Collaboration avec les équipes produit pour concevoir des solutions évolutives répondant aux besoins métiers et utilisateurs
+- Conception et développement d’applications web et mobiles complexes en environnement cloud et conteneurisé (*Kubernetes, Docker*).  
+- Analyse de la performance et rationalisation des architectures logicielles, réduction des coûts d’exploitation de 20 %.  
+- Mise en œuvre de solutions scalables et résilientes alignées sur les besoins métiers.  
+- Collaboration avec les équipes produit et direction technique pour la définition de roadmaps technologiques.  
+- Expérience en gestion de projet et suivi de KPIs de performance applicative (temps de réponse, disponibilité, sécurité).
 
 #work(
-  title: "Ingénieur Logiciel",
+  title: "Ingénieur Logiciel – Modernisation SI",
   dates: dates-helper(start-date: "Juil 2023", end-date: "Août 2023"),
   company: "INFOGERANCE ET INGENIERIE INFORMATIQUE",
   location: "Fès, Maroc",
 )
-Développement d’une application de gestion d’inventaire avec *ReactJS* et *FastAPI*, entraînant une réduction de 30 % du temps de traitement des commandes.
+- Développement d’une application de gestion d’inventaire en *ReactJS* et *FastAPI* pour automatiser les processus internes.  
+- Participation à l’analyse des besoins métier et à la refonte partielle de l’infrastructure logicielle.  
+- Amélioration de la traçabilité et de la fiabilité des données, réduisant de 30 % le temps de traitement des commandes.
 
 == Formation
 
 #edu(
   institution: "Polytech Nice Sophia",
   dates: dates-helper(start-date: "Sept 2022", end-date: "Sept 2025"),
-  degree: "Diplôme d’ingénieur en informatique",
+  degree: "Diplôme d’ingénieur en informatique – Systèmes et technologies de l’information",
   location: "Sophia Antipolis, France",
 )
-Direction de plusieurs projets de groupe et gestion d’équipes pluridisciplinaires tout au long du cursus.
+- Approfondissement en architecture des systèmes, sécurité, cloud computing et gestion de projets.  
+- Réalisation de projets pluridisciplinaires intégrant analyse de besoins, conception et pilotage technique.
 
 #edu(
   institution: "IAE Nice",
   dates: dates-helper(start-date: "Sept 2024", end-date: "Sept 2025"),
-  degree: "Master en Management et Administration des Entreprises",
+  degree: "Master Management et Administration des Entreprises (MAE)",
   location: "Nice, France",
 )
-Spécialisation en contrôle de gestion et analyse financière, avec un accent sur la transformation numérique.
+- Spécialisation en contrôle de gestion, analyse financière et stratégie d’entreprise.  
+- Formation à la conduite du changement et à la gestion des risques dans les contextes de transformation digitale et M&A.
 
 #edu(
-  institution: "Classes Préparatoires aux Grandes Écoles Settat",
+  institution: "Classes Préparatoires aux Grandes Écoles – Lycée Settat",
   dates: dates-helper(start-date: "Sept 2020", end-date: "Juil 2022"),
-  degree: "Concours CCINP — Classement 165/1300",
+  degree: "Concours CCINP – Classement 165/1300",
   location: "Settat, Maroc",
 )
 
-== Projets
+== Projets Sélectionnés
 
 #project(
-  role: "Développeur Principal",
+  role: "Chef de projet technique",
   name: "Budgeteer",
   dates: dates-helper(start-date: "Juil 2024", end-date: "Présent"),
   url: "https://github.com/budgeteer-app",
 )
-
-Application multiplateforme de gestion de dépenses partagées développée en *Kotlin* et *Spring Boot*. Développement d’une API robuste connectée à une application mobile multiplateforme utilisant *Kotlin Multiplatform*. Intégration continue via *GitHub Actions*.
+Application de gestion financière développée en *Kotlin* et *Spring Boot*.  
+Mise en place d’une API sécurisée et d’un modèle de données structuré pour la consolidation et le reporting financier multi-utilisateur.
 
 #project(
-  role: "Développeur Principal",
+  role: "Architecte technique",
   name: "DsEasy",
   dates: dates-helper(start-date: "Sept 2023", end-date: "Présent"),
   url: "https://github.com/ds-easy",
 )
-Service de génération d’examens développé en *Go* et *SQLite*, utilisant *gomigrate*, *SQLc* et *gorilla/mux*. Développement d’une API robuste en *Go*, connectée à un frontend réactif avec *React* et *Tailwind CSS*. Intégration continue pour des mises à jour fluides et une maintenance simplifiée.
+Conception d’un service d’automatisation d’examens en *Go* et *React*.  
+Pilotage de l’intégration continue et de la maintenance du système via *GitHub Actions*.
 
-== Compétences Techniques
-- *Langages de Programmation* : JavaScript, Python, C/C++, Java, Go, Rust, Kotlin  
-- *Technologies* : React, Svelte, Angular, Spring, NestJS, Tailwind CSS  
-- *DevOps* : Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube, GitLab, GitLab CI  
-- *Cloud* : Google Cloud Platform, AWS  
-- *Programmation Compétitive* : Top 90 sur 400 à la BattleDev Thales 2024 ; Fondateur du club Sharkoders à Polytech Marseille et organisateur de compétitions d’algorithmique à Polytech Nice au sein du BDT Club, promouvant la culture algorithmique et le développement collaboratif.
+== Compétences Clés
 
-== Compétences Transversalles
-- *Leadership* : Encadrement d’équipes de développement sur plusieurs projets, coordination entre différents domaines techniques  
-- *Esprit d’équipe* : Promotion d’un environnement collaboratif et partage des connaissances au sein des équipes  
-- *Gestion des tâches* : Planification et suivi des livrables dans des contextes multidisciplinaires  
-- *Langues* : Arabe, Français, Anglais (courant)
+- *Systèmes d’Information & Architecture* : audit, performance, sécurité, intégration SI  
+- *Transformation & M&A Tech* : compréhension des enjeux IT dans les opérations de fusion, carve-out et post-merger  
+- *Langages* : JavaScript, Python, Java, Kotlin, Go  
+- *Outils* : React, Angular, Spring Boot, NestJS, Docker, Kubernetes, GitLab CI/CD  
+- *Analyse & Reporting* : Excel, PowerPoint, Notion, Confluence  
+- *Langues* : Français (courant), Anglais (courant), Arabe (natif)
+
+== Compétences Transversales
+
+- *Analyse et synthèse* : évaluation rapide des environnements techniques et financiers.  
+- *Leadership & Esprit d’équipe* : coordination de projets techniques, animation d’équipes pluridisciplinaires.  
+- *Rigueur et esprit critique* : identification des risques opérationnels et opportunités de synergies IT.  
+- *Communication* : restitution claire et structurée à des interlocuteurs techniques et non-techniques.
+
+== Centres d’intérêt
+
+- M&A technologique, transformation digitale, stratégie d’entreprise  
+- Programmation compétitive : Top 90/400 – BattleDev Thales 2024  
+- Innovation et entrepreneuriat : fondateur du club “Sharkoders” (Polytech Marseille)  
