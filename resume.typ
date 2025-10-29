@@ -54,12 +54,14 @@
       box(
         align(left)[
           // Name and title
+          #align(center)[
           #text(
             size: 18pt, // Reduced from 20pt
             weight: "bold",
             fill: rgb("#26428b"),
-            [#(author), Full Stack Engineer],
+            [#(author)],
           )
+          ]
 
           // Contact information (moved from below to here)
           #pad(
@@ -94,7 +96,7 @@
 
           #pad(
             top: 2pt,
-            [Full Stack Engineer with 2 years of experience in web and mobile development (Angular, React, NestJS, Spring Boot, Kotlin). Expertise in software architecture, performance optimization, and Kubernetes infrastructure management.],
+            [Full Stack Engineer with a strong interest in in software architecture, performance optimization, and Kubernetes infrastructure management.],
           )
         ],
       ),
@@ -152,7 +154,7 @@
   company: "",
   location: "",
 ) = {
-  generic-two-by-two(top-left: strong(title), top-right: dates, bottom-left: company, bottom-right: emph(location))
+  generic-two-by-two(top-left: strong(company), top-right: dates, bottom-left: emph(title), bottom-right: emph(location))
 }
 
 #let project(
@@ -220,7 +222,6 @@ Design, development, and operation of complex web and mobile applications in a d
   location: "Fez, Morocco",
 )
 Development of an inventory management application using *ReactJS* and *FastAPI*, resulting in a 30% reduction in order processing time.
-Development of an inventory management application using *ReactJS* and *FastAPI*, resulting in a 30% reduction in order processing time.
 
 == Education
 
@@ -243,7 +244,7 @@ Specialized in management control and financial analysis, with focus on strategi
 #edu(
   institution: "Classes Préparatoires aux Grandes Ecoles Settat",
   dates: dates-helper(start-date: "Sept 2020", end-date: "Jul 2022"),
-  degree: "CCINP Competition ranking 165/1300",
+  degree: "",
   location: "Settat, Morocco",
 )
 
@@ -262,7 +263,7 @@ Cross-platform shared expense management application developed in *Kotlin* and *
   role: "Lead Developer",
   name: "DsEasy",
   dates: dates-helper(start-date: "Sep 2023", end-date: "Present"),
-  url: "https://github.com/ds-easy",
+  url: "",
 )
 Exam generation service developed in Go and SQLite, utilizing gomigrate, SQLc, and gorilla/mux. Development of a robust API with Go, connected to a responsive frontend using React and Tailwind CSS. Continuous integration for seamless updates and management.
 
@@ -271,7 +272,7 @@ Exam generation service developed in Go and SQLite, utilizing gomigrate, SQLc, a
 - *Technologies*: React, Svelte, Angular, Spring, NestJS, Tailwind CSS
 - *DevOps*: Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube, GitLab, GitLab CI
 - *Cloud*: Google Cloud Platform, AWS
-- *Competitive Programming*: Top 90 out of 400 in Thales Battledev 2024; Founder of Sharkoders club at Polytech Marseille and organizer of programming competitions at Polytech Nice in the BDT Club, promoting algorithmic culture and collaborative development.
+- *Competitive Programming*: Top 90 out of 400 in Thales Battledev 2024; Founder of Competitive Coding club at Polytech Marseille and organizer of programming competitions at Polytech Nice.
 
 == Soft Skills
 - *Leadership*: Led development teams in multiple group projects, coordinating efforts across different technical domains
