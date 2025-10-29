@@ -220,7 +220,6 @@ Design, development, and operation of complex web and mobile applications in a d
   location: "Fez, Morocco",
 )
 Development of an inventory management application using *ReactJS* and *FastAPI*, resulting in a 30% reduction in order processing time.
-Development of an inventory management application using *ReactJS* and *FastAPI*, resulting in a 30% reduction in order processing time.
 
 == Education
 
@@ -240,6 +239,7 @@ Headed multiple group projects and managed cross-functional teams throughout the
 )
 
 Specialized in management control and financial analysis, with focus on strategic decision-making, and digital transformation.
+
 #edu(
   institution: "Classes Préparatoires aux Grandes Ecoles Settat",
   dates: dates-helper(start-date: "Sept 2020", end-date: "Jul 2022"),
