@@ -40,28 +40,16 @@
     #it.body
   ]
 
-  box(
-    grid(
-      columns: (auto, 1fr),
-      gutter: 0.3cm,
-      // Reduced from 0.5cm
-      align: horizon,
-
-      // Image in the first column
-      //box[#image("photo2.png", width: 1.8cm)], // Slightly smaller image
-
-      // Text content in the second column - everything to the right of the picture
       box(
-        align(left)[
+        width: 100%,
+        align(center)[
           // Name and title
-          #align(center)[
           #text(
             size: 18pt, // Reduced from 20pt
             weight: "bold",
             fill: rgb("#26428b"),
             [#(author)],
           )
-          ]
 
           // Contact information (moved from below to here)
           #pad(
@@ -76,16 +64,17 @@
                     location
                   },
                   if email != "" {
-                    link("mailto:" + email)[#email]
+                    link("mailto:" + email)[Email]
+
                   },
                   if github != "" {
-                    link("https://" + github)[#github]
+                    link("https://" + github)[Github]
                   },
                   if linkedin != "" {
-                    link("https://" + linkedin)[#linkedin]
+                    link("https://" + linkedin)[Linkedin]
                   },
                   if personal-site != "" {
-                    link("https://" + personal-site)[#personal-site]
+                    link("https://" + personal-site)[Portfolio]
                   },
                 )
                   .filter(x => x != none)
@@ -96,12 +85,11 @@
 
           #pad(
             top: 2pt,
-            [Full Stack Engineer with a strong interest in in software architecture, performance optimization, and Kubernetes infrastructure management.],
+            [Full Stack Engineer with a strong interest in in software architecture,\
+             performance optimization, and Kubernetes infrastructure management.],
           )
         ],
-      ),
-    ),
-  )
+      )
 
   set par(justify: true)
   body
@@ -204,7 +192,7 @@
 #work(
   title: "Full Stack Engineer",
   dates: dates-helper(start-date: "Sept 2023", end-date: "Sept 2025"),
-  company: "Stiilt, SAS",
+  company: "Stiilt",
   location: "Nice, France",
 )
 
@@ -214,14 +202,8 @@ Design, development, and operation of complex web and mobile applications in a d
 - Management and debugging of *Kubernetes* infrastructures, including container orchestration and deployment pipelines
 - Performance optimization across web and mobile platforms, achieving a 40% reduction in loading times through code refactoring and caching strategies
 - Collaboration with product teams to deliver scalable solutions meeting business requirements and user needs
-
-#work(
-  title: "Software Engineer",
-  dates: dates-helper(start-date: "Jul 2023", end-date: "Aug 2023"),
-  company: "INFOGERANCE ET INGENIERIE INFORMATIQUE",
-  location: "Fez, Morocco",
-)
-Development of an inventory management application using *ReactJS* and *FastAPI*, resulting in a 30% reduction in order processing time.
+- TODO : THE RENTER WEBSITE THAT I CREATED FRONT AND BACK 
+- ADD NETWORK PAYMENT STUFF AND MIGRATION
 
 == Education
 
@@ -231,7 +213,7 @@ Development of an inventory management application using *ReactJS* and *FastAPI*
   degree: "Engineering Degree, Computer Science",
   location: "Sophia Antipolis, France",
 )
-Headed multiple group projects and managed cross-functional teams throughout the program.
+Relevant coursework: Software architecture, development operations, 3D Animations, Game development, Parallelism, CUDA, Functional Programming, Advanced Algorithms and Turing machines, Advanced networking, Software security, Middleware and Service Oriented Computing, Conception of interactive systems, Multimodal Interaction Techniques.
 
 #edu(
   institution: "IAE Nice",
@@ -239,14 +221,17 @@ Headed multiple group projects and managed cross-functional teams throughout the
   degree: "Master's Degree, Management and Business Administration",
   location: "Nice, France",
 )
-
 Specialized in management control and financial analysis, with focus on strategic decision-making, and digital transformation.
+
 #edu(
   institution: "Classes Préparatoires aux Grandes Ecoles Settat",
   dates: dates-helper(start-date: "Sept 2020", end-date: "Jul 2022"),
   degree: "",
   location: "Settat, Morocco",
 )
+- Mathematics : Real Analysis, General and Linear Algebra, Differential Equations, Probability and Topology.
+- Computer Science : Python, SQL, Algorithms and Numerical methods.Intensive two years studying Mathematics and Physics among other courses to pass highly competitive entrance exams of prestigious French Engineering schools.
+
 
 == Projects
 
