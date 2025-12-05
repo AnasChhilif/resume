@@ -85,7 +85,7 @@
 
           #pad(
             top: 2pt,
-            [Full Stack Engineer with a strong interest in in software architecture,\
+            [Full Stack Engineer with a strong interest in software architecture,\
              performance optimization, and Kubernetes infrastructure management.],
           )
         ],
@@ -153,7 +153,7 @@
 ) = {
   pad(top: 2pt, bottom: 2pt)[
     // Reduced padding
-    *#role*, #name #if (url != "") {"(" + (link(url)[#url]) + ")"} #h(1fr) #dates
+    *#role*, #name #if (url != "") {"(" + (link(url)[Github]) + ")"} #h(1fr) #dates
   ]
 }
 
@@ -202,8 +202,8 @@ Design, development, and operation of complex web and mobile applications in a d
 - Management and debugging of *Kubernetes* infrastructures, including container orchestration and deployment pipelines
 - Performance optimization across web and mobile platforms, achieving a 40% reduction in loading times through code refactoring and caching strategies
 - Collaboration with product teams to deliver scalable solutions meeting business requirements and user needs
-- TODO : THE RENTER WEBSITE THAT I CREATED FRONT AND BACK 
-- ADD NETWORK PAYMENT STUFF AND MIGRATION
+- Design and development of client facing website that gives client access to a dashboard that allows him to view and interact with their entire fleet in the case that they rent multiple vehicles. Features include real-time location of all vehicles, ability to add or remove driver access to the vehicle, and the ability to remotely lock/unlock the vehicle.
+- Adding the cobadged card compliance to the mobile apps, designing and implementing interfaces that allow users to select their preferred network to process their payments when they add a debit card to their accounts
 
 == Education
 
@@ -226,14 +226,35 @@ Specialized in management control and financial analysis, with focus on strategi
 #edu(
   institution: "Classes Préparatoires aux Grandes Ecoles Settat",
   dates: dates-helper(start-date: "Sept 2020", end-date: "Jul 2022"),
-  degree: "",
+  degree: "Centrale & CCINP Competitions",
   location: "Settat, Morocco",
 )
+Intensive two years studying Mathematics and Physics among other courses to pass highly competitive entrance exams of prestigious French Engineering schools.
+
 - Mathematics : Real Analysis, General and Linear Algebra, Differential Equations, Probability and Topology.
-- Computer Science : Python, SQL, Algorithms and Numerical methods.Intensive two years studying Mathematics and Physics among other courses to pass highly competitive entrance exams of prestigious French Engineering schools.
+- Computer Science : Python, SQL, Algorithms and Numerical methods.
+
+
 
 
 == Projects
+
+#project(
+  role: "Founder & Lead Engineer",
+  name: "Entervio",
+  dates: dates-helper(start-date: "Nov 2025", end-date: "Present"),
+  url: "https://github.com/AnasChhilif/entervio",
+)
+AI-powered voice interview platform with real-time speech interaction. Built full-stack with *React* and *FastAPI*, integrating *Gemini*, *Whisper*, and *ElevenLabs* for dynamic interviews with configurable AI personas and detailed feedback.
+
+#project(
+  role: "Software Architect & Lead developer",
+  name: "DsEasy",
+  dates: dates-helper(start-date: "Sep 2023", end-date: "Present"),
+  url: "",
+)
+
+Exam generation service developed in *Go* and *SQLite*, utilizing *gomigrate*, *SQLc*, and *gorilla/mux*. Development of a robust API with Go, connected to a responsive frontend using *React* and *Tailwindcss* . Continuous integration for seamless updates and management.
 
 #project(
   role: "Lead Developer",
@@ -244,13 +265,7 @@ Specialized in management control and financial analysis, with focus on strategi
 
 Cross-platform shared expense management application developed in *Kotlin* and *Spring Boot*. Development of a robust API with *Kotlin* and *Spring Boot*, connected to a cross-platform mobile application using *Kotlin Multiplatform*. Continuous integration with *GitHub Actions*.
 
-#project(
-  role: "Lead Developer",
-  name: "DsEasy",
-  dates: dates-helper(start-date: "Sep 2023", end-date: "Present"),
-  url: "",
-)
-Exam generation service developed in Go and SQLite, utilizing gomigrate, SQLc, and gorilla/mux. Development of a robust API with Go, connected to a responsive frontend using React and Tailwind CSS. Continuous integration for seamless updates and management.
+
 
 == Technical Skills
 - *Programming Languages*: JavaScript, Python, C/C++, Java, Go, Rust, Kotlin
@@ -258,9 +273,3 @@ Exam generation service developed in Go and SQLite, utilizing gomigrate, SQLc, a
 - *DevOps*: Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube, GitLab, GitLab CI
 - *Cloud*: Google Cloud Platform, AWS
 - *Competitive Programming*: Top 90 out of 400 in Thales Battledev 2024; Founder of Competitive Coding club at Polytech Marseille and organizer of programming competitions at Polytech Nice.
-
-== Soft Skills
-- *Leadership*: Led development teams in multiple group projects, coordinating efforts across different technical domains
-- *Team Building*: Fostered collaborative environments and facilitated knowledge sharing among team members
-- *Task Management*: Effectively managed project timelines and deliverables across multidisciplinary teams
-- *Languages*: Arabic, French, English (fluent)
