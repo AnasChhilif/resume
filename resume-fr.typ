@@ -12,7 +12,7 @@
   set document(author: author, title: author)
   set text(
     font: "New Computer Modern",
-    size: 10pt,
+    size: 9.6pt,
     lang: "fr",
     ligatures: false,
   )
@@ -40,25 +40,18 @@
     #it.body
   ]
 
-  box(
-    grid(
-      columns: (auto, 1fr),
-      gutter: 0.3cm,
-      align: horizon,
-
-      // Image in the first column
-      box[#image("photo23.jpg", width: 2.0cm)], // Slightly smaller image
-
-      // Text content in the second column - everything to the right of the picture
       box(
-        align(left)[
+        width: 100%,
+        align(center)[
+          // Name and title
           #text(
             size: 18pt,
             weight: "bold",
             fill: rgb("#26428b"),
-            [#(author), Ingénieur Full Stack],
+            [#(author)],
           )
 
+          // Contact information
           #pad(
             top: 2pt,
             [
@@ -71,16 +64,17 @@
                     location
                   },
                   if email != "" {
-                    link("mailto:" + email)[#email]
+                    link("mailto:" + email)[Email]
+
                   },
                   if github != "" {
-                    link("https://" + github)[#github]
+                    link("https://" + github)[Github]
                   },
                   if linkedin != "" {
-                    link("https://" + linkedin)[#linkedin]
+                    link("https://" + linkedin)[Linkedin]
                   },
                   if personal-site != "" {
-                    link("https://" + personal-site)[#personal-site]
+                    link("https://" + personal-site)[Portfolio]
                   },
                 )
                   .filter(x => x != none)
@@ -91,12 +85,11 @@
 
           #pad(
             top: 2pt,
-            [Ingénieur Full Stack avec 2 ans d’expérience en développement web et mobile (Angular, React, NestJS, Spring Boot, Kotlin). Expertise en architecture logicielle et optimisation des performances.],
+            [Ingénieur Full Stack avec un fort intérêt pour l'architecture logicielle,\
+             l'optimisation des performances et la gestion des infrastructures Kubernetes.],
           )
         ],
-      ),
-    ),
-  )
+      )
 
   set par(justify: true)
   body
@@ -136,7 +129,9 @@
   degree: "",
   location: "",
 ) = {
-  generic-two-by-two(top-left: strong(institution), top-right: dates, bottom-left: emph(degree), bottom-right: emph(location))
+  generic-two-by-two(top-left: strong(institution), top-right: dates, bottom-left: emph(degree), bottom-right: emph(
+    location,
+  ))
 }
 
 #let work(
@@ -145,7 +140,7 @@
   company: "",
   location: "",
 ) = {
-  generic-two-by-two(top-left: strong(title), top-right: dates, bottom-left: company, bottom-right: emph(location))
+  generic-two-by-two(top-left: strong(company), top-right: dates, bottom-left: emph(title), bottom-right: emph(location))
 }
 
 #let project(
@@ -155,7 +150,7 @@
   dates: "",
 ) = {
   pad(top: 2pt, bottom: 2pt)[
-    *#role*, #name #if (url != "") {"(" + (link(url)[#url]) + ")"} #h(1fr) #dates
+    *#role*, #name #if (url != "") {"(" + (link(url)[Github]) + ")"} #h(1fr) #dates
   ]
 }
 
@@ -194,51 +189,69 @@
 #work(
   title: "Ingénieur Full Stack",
   dates: dates-helper(start-date: "Sept 2023", end-date: "Sept 2025"),
-  company: "Stiilt, SAS",
+  company: "Stiilt",
   location: "Nice, France",
 )
 
-Conception, développement et exploitation d’applications web et mobiles complexes dans un environnement startup dynamique :
-- Architecture et implémentation de solutions *full stack* avec *Angular* et *NestJS*, couvrant à la fois le développement d’interfaces utilisateur et d’API backend
-- Maintenance et optimisation des applications mobiles *iOS* et *Android*, garantissant compatibilité et performance multiplateforme
-- Gestion et débogage d’infrastructures *Kubernetes*, incluant l’orchestration de conteneurs et les pipelines de déploiement
-- Optimisation des performances sur les plateformes web et mobiles, avec une réduction de 40 % des temps de chargement grâce au refactoring et à la mise en cache
-- Collaboration avec les équipes produit pour concevoir des solutions évolutives répondant aux besoins métiers et utilisateurs
-
-#work(
-  title: "Ingénieur Logiciel",
-  dates: dates-helper(start-date: "Juil 2023", end-date: "Août 2023"),
-  company: "INFOGERANCE ET INGENIERIE INFORMATIQUE",
-  location: "Fès, Maroc",
-)
-Développement d’une application de gestion d’inventaire avec *ReactJS* et *FastAPI*, entraînant une réduction de 30 % du temps de traitement des commandes.
+Conception, développement et exploitation d'applications web et mobiles complexes dans un environnement de startup dynamique :
+- Architecture et implémentation de solutions *full stack* utilisant *Angular* et *NestJS*, gérant à la fois les interfaces utilisateur frontend et le développement d'API backend
+- Maintenance et optimisation d'applications mobiles *iOS* et *Android*, assurant la compatibilité multi-plateforme et les performances
+- Gestion et débogage d'infrastructures *Kubernetes*, incluant l'orchestration de conteneurs et les pipelines de déploiement
+- Optimisation des performances sur les plateformes web et mobiles, réalisant une réduction de 40% des temps de chargement grâce à la refonte du code et aux stratégies de mise en cache
+- Collaboration avec les équipes produit pour livrer des solutions évolutives répondant aux exigences métier et aux besoins des utilisateurs
+- Conception et développement d'un site web destiné aux clients leur donnant accès à un tableau de bord permettant de visualiser et interagir avec leur flotte complète dans le cas de location de plusieurs véhicules. Les fonctionnalités incluent la localisation en temps réel de tous les véhicules, la possibilité d'ajouter ou de retirer l'accès conducteur au véhicule, et la capacité de verrouiller/déverrouiller le véhicule à distance
+- Ajout de la conformité des cartes co-badgées aux applications mobiles, conception et implémentation d'interfaces permettant aux utilisateurs de sélectionner leur réseau préféré pour traiter leurs paiements lorsqu'ils ajoutent une carte de débit à leurs comptes
 
 == Formation
 
 #edu(
   institution: "Polytech Nice Sophia",
   dates: dates-helper(start-date: "Sept 2022", end-date: "Sept 2025"),
-  degree: "Diplôme d’ingénieur en informatique",
+  degree: "Diplôme d'Ingénieur, Informatique",
   location: "Sophia Antipolis, France",
 )
-Direction de plusieurs projets de groupe et gestion d’équipes pluridisciplinaires tout au long du cursus.
+Cours pertinents : Architecture logicielle, opérations de développement, animations 3D, développement de jeux, parallélisme, CUDA, programmation fonctionnelle, algorithmes avancés et machines de Turing, réseaux avancés, sécurité logicielle, middleware et informatique orientée services, conception de systèmes interactifs, techniques d'interaction multimodale.
 
 #edu(
   institution: "IAE Nice",
   dates: dates-helper(start-date: "Sept 2024", end-date: "Sept 2025"),
-  degree: "Master en Management et Administration des Entreprises",
+  degree: "Master, Management et Administration des Entreprises",
   location: "Nice, France",
 )
-Spécialisation en contrôle de gestion et analyse financière, avec un accent sur la transformation numérique.
+Spécialisé en contrôle de gestion et analyse financière, avec un accent sur la prise de décision stratégique et la transformation digitale.
 
 #edu(
   institution: "Classes Préparatoires aux Grandes Écoles Settat",
   dates: dates-helper(start-date: "Sept 2020", end-date: "Juil 2022"),
-  degree: "Concours CCINP — Classement 165/1300",
+  degree: "Concours Centrale & CCINP",
   location: "Settat, Maroc",
 )
+Deux années intensives d'études en mathématiques et physique parmi d'autres cours pour réussir les concours d'entrée très sélectifs des grandes écoles d'ingénieurs françaises.
+
+- Mathématiques : Analyse réelle, algèbre générale et linéaire, équations différentielles, probabilités et topologie.
+- Informatique : Python, SQL, algorithmes et méthodes numériques.
+
+
+
 
 == Projets
+
+#project(
+  role: "Fondateur & Ingénieur Principal",
+  name: "Entervio",
+  dates: dates-helper(start-date: "Nov 2025", end-date: "Présent"),
+  url: "https://github.com/AnasChhilif/entervio",
+)
+Plateforme d'entretien vocal alimentée par IA avec interaction vocale en temps réel. Développée en full-stack avec *React* et *FastAPI*, intégrant *Gemini*, *Whisper* et *ElevenLabs* pour des entretiens dynamiques avec des personas IA configurables et des retours détaillés.
+
+#project(
+  role: "Architecte Logiciel & Développeur Principal",
+  name: "DsEasy",
+  dates: dates-helper(start-date: "Sep 2023", end-date: "Présent"),
+  url: "",
+)
+
+Service de génération d'examens développé en *Go* et *SQLite*, utilisant *gomigrate*, *SQLc* et *gorilla/mux*. Développement d'une API robuste avec Go, connectée à un frontend responsive utilisant *React* et *Tailwindcss*. Intégration continue pour des mises à jour et une gestion fluides.
 
 #project(
   role: "Développeur Principal",
@@ -247,25 +260,13 @@ Spécialisation en contrôle de gestion et analyse financière, avec un accent s
   url: "https://github.com/budgeteer-app",
 )
 
-Application multiplateforme de gestion de dépenses partagées développée en *Kotlin* et *Spring Boot*. Développement d’une API robuste connectée à une application mobile multiplateforme utilisant *Kotlin Multiplatform*. Intégration continue via *GitHub Actions*.
+Application multi-plateforme de gestion de dépenses partagées développée en *Kotlin* et *Spring Boot*. Développement d'une API robuste avec *Kotlin* et *Spring Boot*, connectée à une application mobile multi-plateforme utilisant *Kotlin Multiplatform*. Intégration continue avec *GitHub Actions*.
 
-#project(
-  role: "Développeur Principal",
-  name: "DsEasy",
-  dates: dates-helper(start-date: "Sept 2023", end-date: "Présent"),
-  url: "https://github.com/ds-easy",
-)
-Service de génération d’examens développé en *Go* et *SQLite*, utilisant *gomigrate*, *SQLc* et *gorilla/mux*. Développement d’une API robuste en *Go*, connectée à un frontend réactif avec *React* et *Tailwind CSS*. Intégration continue pour des mises à jour fluides et une maintenance simplifiée.
+
 
 == Compétences Techniques
-- *Langages de Programmation* : JavaScript, Python, C/C++, Java, Go, Rust, Kotlin  
-- *Technologies* : React, Svelte, Angular, Spring, NestJS, Tailwind CSS  
-- *DevOps* : Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube, GitLab, GitLab CI  
-- *Cloud* : Google Cloud Platform, AWS  
-- *Programmation Compétitive* : Top 90 sur 400 à la BattleDev Thales 2024 ; Fondateur du club Sharkoders à Polytech Marseille et organisateur de compétitions d’algorithmique à Polytech Nice au sein du BDT Club, promouvant la culture algorithmique et le développement collaboratif.
-
-== Compétences Transversalles
-- *Leadership* : Encadrement d’équipes de développement sur plusieurs projets, coordination entre différents domaines techniques  
-- *Esprit d’équipe* : Promotion d’un environnement collaboratif et partage des connaissances au sein des équipes  
-- *Gestion des tâches* : Planification et suivi des livrables dans des contextes multidisciplinaires  
-- *Langues* : Arabe, Français, Anglais (courant)
+- *Langages de Programmation* : JavaScript, Python, C/C++, Java, Go, Rust, Kotlin
+- *Technologies* : React, Svelte, Angular, Spring, NestJS, Tailwind CSS
+- *DevOps* : Kubernetes, Docker, Jenkins, GitHub Actions, SonarQube, GitLab, GitLab CI
+- *Cloud* : Google Cloud Platform, AWS
+- *Programmation Compétitive* : Top 90 sur 400 au Thales Battledev 2024 ; Fondateur du club de programmation compétitive à Polytech Marseille et organisateur de compétitions de programmation à Polytech Nice.

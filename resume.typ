@@ -243,7 +243,7 @@ Intensive two years studying Mathematics and Physics among other courses to pass
   role: "Founder & Lead Engineer",
   name: "Entervio",
   dates: dates-helper(start-date: "Nov 2025", end-date: "Present"),
-  url: "https://github.com/AnasChhilif/entervio",
+  url: "https://github.com/Entervio/entervio",
 )
 AI-powered voice interview platform with real-time speech interaction. Built full-stack with *React* and *FastAPI*, integrating *Gemini*, *Whisper*, and *ElevenLabs* for dynamic interviews with configurable AI personas and detailed feedback.
 
